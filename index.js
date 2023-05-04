@@ -1,4 +1,4 @@
-const sessionName = "harshitethic";
+const sessionName = "season";
 const donet = "https://CyberExpert0101.github.io";
 const owner = ["919938770375"]; // Put your number here ex: ["91xxxxxxxxx"]
 const {
@@ -139,7 +139,7 @@ async function startHisoka() {
   console.log(`using WA v${version.join(".")}, isLatest: ${isLatest}`);
   console.log(
     color(
-      figlet.textSync("HARSHITETHIC", {
+      figlet.textSync("WHATSAPP-GPT", {
         font: "Standard",
         horizontalLayout: "default",
         vertivalLayout: "default",
@@ -152,7 +152,7 @@ async function startHisoka() {
   const client = sansekaiConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["CODER: Harshitethic - BOT", "Safari", "5.1.7"],
+    browser: ["ChatGPT: WhatsApp - BOT", "Firefox", "5.1.7"],
     auth: state,
   });
 
@@ -168,7 +168,7 @@ async function startHisoka() {
       if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
       m = smsg(client, mek, store);
-      require("./harshitethic")(client, m, chatUpdate, store);
+      require("./bot")(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
@@ -265,7 +265,7 @@ async function startHisoka() {
         console.log("Connection Replaced, Another New Session Opened, Please Restart Bot");
         process.exit();
       } else if (reason === DisconnectReason.loggedOut) {
-        console.log(`Device Logged Out, Please Delete Folder Session harshitethic and Scan Again.`);
+        console.log(`Device Logged Out, Please Delete Folder Session season and Scan Again.`);
         process.exit();
       } else if (reason === DisconnectReason.restartRequired) {
         console.log("Restart Required, Restarting...");
@@ -279,7 +279,7 @@ async function startHisoka() {
       }
     } else if (connection === "open") {
       console.log(color("Bot success conneted to server", "green"));
-      console.log(color("JOIN: MY TELEGRAM: @harshitethicsupport", "yellow"));
+      console.log(color("JOIN: MY TELEGRAM: @CyberExpert0101", "yellow"));
       console.log(color("Type /menu to see menu"));
       client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n${donet}` });
     }
