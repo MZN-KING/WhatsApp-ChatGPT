@@ -15,7 +15,7 @@ const fs = require("fs");
 const util = require("util");
 const chalk = require("chalk");
 const { Configuration, OpenAIApi } = require("openai");
-require("dotenv").config();
+
 // Load OpenAI API key configuration from file
 //let setting = require("./key.json");
 
