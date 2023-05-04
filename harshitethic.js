@@ -1,4 +1,5 @@
 // Import required modules
+require("dotenv").config();
 const {
   BufferJSON,
   WA_DEFAULT_EPHEMERAL,
@@ -14,9 +15,9 @@ const fs = require("fs");
 const util = require("util");
 const chalk = require("chalk");
 const { Configuration, OpenAIApi } = require("openai");
-
+require("dotenv").config();
 // Load OpenAI API key configuration from file
-let setting = require("./key.json");
+//let setting = require("./key.json");
 
 // Load custom prompt from file
 const customPrompt = fs.readFileSync("custom_prompt.txt", "utf-8");
@@ -83,10 +84,10 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     // If the message is not a command, use OpenAI to generate a response
     else {
       // If OpenAI API key is not configured, return and do nothing
-      if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return;
+      if (!process.env.OPENAI_API_KEY) return;
       // Create OpenAI API client
       const configuration = new Configuration({
-        apiKey: setting.keyopenai,
+         apiKey: process.env.OPENAI_API_KEY,
       });
       const openai = new OpenAIApi(configuration);
 
@@ -116,11 +117,4 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
   }
 };
 
-// Watch for changes in this file and reload the code if changes are detected
-let file = require.resolve(__filename);
-fs.watchFile(file, () => {
-  fs.unwatchFile(file);
-  console.log(chalk.redBright(`Update ${__filename}`));
-  delete require.cache[file];
-  require(file);
-});
+// Watch for changes in this file and reload
