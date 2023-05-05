@@ -28,7 +28,7 @@ INSTALLATION INSTRUCTIONS
   </ul>
 </div>
 
-<p>If you encounter any issues or have any questions, please don't hesitate to contact Harshit Sharma using the information provided above.</p>
+<p>If you encounter any issues or have any questions, please don't hesitate to contact Goutam Kumar using the information provided above.</p>
 <br>
 <p>This code repository contains a WhatsApp chatbot built using the OpenAI GPT-3.5 language model and the Baileys library. This chatbot is capable of generating responses to user input based on the context of the conversation. Additionally, the chatbot has a feature to store chat history, making it more convenient to continue the conversation at a later time.</p>
 
