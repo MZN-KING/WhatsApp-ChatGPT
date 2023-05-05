@@ -113,7 +113,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     }
   } catch (err) {
     // If an error occurs, reply to the incoming message with the error message
-    m.reply(util.format(err));
+    m.reply("Failed to Fatch OpenAI API ⚠️");
   }
 };
 
